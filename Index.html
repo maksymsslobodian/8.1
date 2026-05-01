@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+    <h1>Перевірка завдань</h1> 
+    <p>Любий текст</p> 
+<button id="colorButton">Натисни</button> 
+<p id="counter">0</p> 
+ 
+<button id="btnMinus">-</button> 
+<button id="btnPlus">+</button> 
+ 
+    <script> 
+        // Завдання 1-5 (логіка) 
+        console.log("--- Завдання 1-5 ---"); 
+         
+        // Завдання 2 
+        let name = "Олександр", age = 25, city = "Київ", country = "Україна"; 
+        console.log(Завдання 2: Користувач ${name}, ${age} років, з ${city}, ${country}); 
+ 
+        // Завдання 3 
+        let number = 5674; 
+        let sum = String(number).split('').reduce((a, b) => a + Number(b), 0); 
+        console.log("Завдання 3: Сума цифр =", sum); 
+ 
+        // Завдання 4 
+        const arr = [1,2,3,4,5,6]; 
+        let total = arr.reduce((a, b) => a + b, 0); 
+        console.log("Завдання 4: Сума масиву =", total); 
+ 
+        // Завдання 5 
+        const getLength = (arr) => arr.length; 
+        console.log("Завдання 5: Довжина масиву =", getLength(arr)); 
+ 
+        // Завдання 6 (Кнопка для зміни кольору) 
+        document.getElementById("btn1").onclick = function() { 
+            document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16); 
+        }; 
+    </script> 
+</body> 
+<button onclick="runTask1()">Перевірити Завдання 1</button> 
+<button onclick="runTask2('Олександр', 25)">Перевірити Завдання 2</button> 
+</html> 
+ 
+<!DOCTYPE html> 
+<html> 
+<body> 
+    <h1>Практична робота</h1> 
+ 
+    <script src="script.js"></script>  
+</body> 
+</html> 
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <style> 
+    /* Стиль для анімації */ 
+    #text { 
+      transition: all 0.5s ease; /* Плавна зміна за 0.5 сек */ 
+      opacity: 1;                /* Видимий */ 
+      transform: translateY(0);  /* На місці */ 
+    } 
+ 
+    /* Клас, який ми додаватимемо через JS, щоб сховати текст */ 
+    .hidden { 
+      opacity: 0;                /* Прозорий */ 
+      transform: translateY(-20px); /* Трохи злітає вгору */ 
+      pointer-events: none;      /* Не можна натиснути, коли він "невидимий" */ 
+    } 
+  </style> 
+</head> 
+<body> 
+ 
+<button id="toggleBtn">Показати/Сховати</button> 
+<p id="text">Я текст</p> 
+<p>Інший текст</p> 
+ 
+<script> 
+  const btn = document.getElementById("toggleBtn"); 
+  const p = document.getElementById("text"); 
+ 
+  btn.addEventListener("click", () => { 
+    // Перевіряємо, чи має параграф клас .hidden 
+    if (p.classList.contains("hidden")) { 
+      // Якщо він схований -> показуємо і міняємо текст 
+      p.textContent = "Новий текст";  
+      p.classList.remove("hidden"); 
+    } else { 
+      // Якщо він видимий -> ховаємо 
+      p.classList.add("hidden"); 
+    } 
+  }); 
+</script> 
+ 
+</body> 
+</html>
